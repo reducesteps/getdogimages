@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Images Gallery</title>
+</head>
+<body>
+    <h1>Dog Images Gallery</h1>
+    <ul>
+        {% for image in images %}
+            <li>
+                <img src="{{ url_for('send_image', filename=image) }}" alt="Dog Image" width="300">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
