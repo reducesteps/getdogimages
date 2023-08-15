@@ -4,6 +4,11 @@ from download_dog_images import download_dog_image
 
 app = Flask(__name__)
 
+@app.route('/')
+
+def home():
+    return render_template('index.html')
+
 @app.route('/download')
 
 def download_image():
