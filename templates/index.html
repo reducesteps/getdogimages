@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Images</title>
+    <style>
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #gallery img {
+            margin: 10px;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Dog Images</h1>
+    <button id="download-btn">Download New Dog Image</button>
+    <div id="gallery">
+        <!-- Images will be inserted here by the Flask app -->
+    </div>
+    <script>
+        document.getElementById('download-btn').addEventListener('click', function() {
+            fetch('/download').then(function() {
+                location.reload();
+            });
+        });
+    </script>
+</body>
+</html>
